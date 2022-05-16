@@ -15,6 +15,15 @@
       "type": "http",
       "direction": "out",
       "name": "$return"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "engineer",
+      "databaseName": "engineers",
+      "collectionName": "clouddevs",
+      "createIfNotExists": "true",
+      "connectionStringSetting": "AzureCosmosDBConnectionString"
     }
   ]
 }
