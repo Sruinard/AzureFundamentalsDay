@@ -7,36 +7,46 @@ I hope you are excited about software engineering. Today, we'll be leveraging Az
 
 
 ### Resource Groups, VNet, Application Gateway, Virtual Machine
-Our first application will deploy the Apache WebServer to a VM running Ubuntu 20.04. An Application Gateway instance will proxy incoming requests to the VM. 
-![](./assets/ApplicationGatewayAndVM.png)
-The first 
-
-
-## Azure VM with Application Gateway + VNET
+Our first application will deploy the Apache WebServer to a VM running Ubuntu 20.04. An Application Gateway instance will proxy incoming requests to the VM. Let's go to the portal and walk throught the creation of this architecture.
 
 Archicture:
+![Architecture of the solution we will build during this session](./assets/ApplicationGatewayAndVM.png)
 
-Create Ubuntu 20.04 vm in the portal (create Application Gateway during that process as well)
-navigate to
+While the services are spinning up, let's move forward with explaining some of the Azure Platform Platform capabilities.
+
+## Show Azure Advisor, budgets, (cost) alerting
+In this section, we'll take a brief look at some of the functionality of Azure that's there out of the box.
+Azure Advisor gives recommendations on how to improve your workloads/applications.
+Budgets can be helpful in cost management and combined with alerts provide proactive information if you are reaching a given limit.
+Alerts can be based on cost (use cost alerts for that) or based on metrics (e.g. CPU usage).
+
+
+### Commands to run
+Great! you have deployed your vm, application gateway and vnet. Let's move forward and do the following:
+- download the public/private key which will be used to ssh into the vm
+- install the apache webserver on the vim
+- access the VM endpoint using it's public IP
+- access the Application Gateway's endpoint through it's public IP
 
 ```
+#change rights on the key
 chmod 400 </insert/path/to/key/>
+
+#ssh into the vm
 ssh -i path/to/pemfile.pem azureuser@ipadress
 
+# update apt and install apache webserver
 sudo apt-get update
 sudo apt-get install apache2
 
+# curl local endpoint to validate response
 curl http://localhost:80
 
+# modify default webpage
 cd /var/www/html
 sudo vim index.html --> change "It works" --> "Default page modified by team X"
 
-sudo apt remove apache2
-
-
 ```
-
-## Show budgets, alerting, cost analysis
 
 ## Azure Functions deploy from portal and deploy using VSCode extensions
 
