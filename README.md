@@ -10,7 +10,7 @@ I hope you are excited about software engineering. Today, we'll be leveraging Az
 Our first application will deploy the Apache WebServer to a VM running Ubuntu 20.04. An Application Gateway instance will proxy incoming requests to the VM. Let's go to the portal and walk throught the creation of this architecture.
 
 Archicture:
-![Architecture of the solution we will build during this session](./assets/vm_and_appgw.png)
+![Architecture of the solution](./assets/vm_and_appgw.png)
 
 While the services are spinning up, let's move forward with explaining some of the Azure Platform Platform capabilities.
 
@@ -51,9 +51,26 @@ sudo vim index.html --> change "It works" --> "Default page modified by team X"
 ## Azure Functions deploy from portal and deploy using VSCode extensions
 Let's move on to creating an Azure Function. We'll be seeing how to do this from within the portal as from within VSCode leveraging some of the Azure Extensions.
 
+![Architecture of Azure functions and CosmosDB](./assets/functions_and_cosmos.png)
+
+We'll be completing the following steps:
+- deploy function app from the portal
+- deploy function app through vscode
+- Inspect logs to troubleshoot 500 internal server error
+- Fix the issue and upload an item to cosmos db
 
 
 ## Generate traffic and showcase application insights' live metrics
+The goal here is to get a better understanding of how to analyze your application. We have already worked with Log Analytics (which is also part of Azure Monitor) and are now moving forward with Application Insights. Application Insights provides insights into your application (e.g. how many requests did my service handle, what exceptions where raised). We'll be exploring the live metrics section of application insights to inspect the load on your application in real time. Ready for it?!
+
+![Complete Architecture](./assets/architecture_full.png)
+
+Steps to complete:
+- Active application insights live metrics feature
+- ssh into the vm we already deployed
+- use Apache Benchmark to generate traffic on the server
+- See scaling functionality and requests coming in
+
 
 ```
 ssh -i path/to/pemfile.pem azureuser@ipadress
