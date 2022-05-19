@@ -10,7 +10,7 @@ I hope you are excited about software engineering. Today, we'll be leveraging Az
 Our first application will deploy the Apache WebServer to a VM running Ubuntu 20.04. An Application Gateway instance will proxy incoming requests to the VM. Let's go to the portal and walk throught the creation of this architecture.
 
 Archicture:
-![Architecture of the solution we will build during this session](./assets/ApplicationGatewayAndVM.png)
+![Architecture of the solution we will build during this session](./assets/vm_and_appgw.png)
 
 While the services are spinning up, let's move forward with explaining some of the Azure Platform Platform capabilities.
 
@@ -49,6 +49,9 @@ sudo vim index.html --> change "It works" --> "Default page modified by team X"
 ```
 
 ## Azure Functions deploy from portal and deploy using VSCode extensions
+Let's move on to creating an Azure Function. We'll be seeing how to do this from within the portal as from within VSCode leveraging some of the Azure Extensions.
+
+
 
 ## Generate traffic and showcase application insights' live metrics
 
